@@ -44,10 +44,5 @@ services:
       - Instigator
 
 
-
-
-
-
-
 networks:
   instigator:
