@@ -5,6 +5,20 @@ volumes:
   grafana_data: {}
 
 services:
+  kafka_exporter:
+    image: danielqsj/kafka-exporter
+    networks:
+      - monitoring
+    command: --kafka.server=kafka01.foo.bar:9092 --kafka.server=kafka02.foo.bar:9092 --kafka.server=kafka03.foo.bar:9092
+    deploy:
+      mode: replicated
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M      
+      replicas: 1
+      endpoint_mode: vip
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
