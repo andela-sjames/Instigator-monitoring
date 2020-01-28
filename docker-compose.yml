@@ -56,5 +56,6 @@ secrets:
     file: config/alertmanager.yml
 
 networks:
-  instigator:
-    external: true
+  default:
+    external:
+      name: instigator

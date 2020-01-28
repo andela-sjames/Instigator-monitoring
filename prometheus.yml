@@ -30,10 +30,10 @@ scrape_configs:
       - 'tasks.kafka_exporter'
       type: 'A'
       port: 9308
-        
+
   - job_name: 'kafka'
     static_configs:
     - targets:
-      - kafka01.foo.bar:7072
-      - kafka02.foo.bar:7072
-      - kafka03.foo.bar:7072
+      - broker1:7072
+      - broker1:7072
+      - broker1:7072
