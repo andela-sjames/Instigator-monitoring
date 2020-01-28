@@ -9,31 +9,22 @@ services:
     image: danielqsj/kafka-exporter
     networks:
       - Instigator
-    command: 
-      - --kafka.server=broker1:9092 --kafka.server=broker2:9092 --kafka.server=broker3:9092
+    ports:
+      - 9308:9308
+    command:
+      - --kafka.server=instigator_broker_1:9092 
+      - --kafka.server=instigator_broker_2:9092 
+      - --kafka.server=instigator_broker_3:9092
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
     ports:
       - 9090:9090
     command:
-      - --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --storage.tsdb.retention=168h
+      - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
-    depends_on:
-      - cadvisor
-    networks:
-      - Instigator
-  cadvisor:
-    image: google/cadvisor:latest
-    ports:
-      - 8080:8080
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - Instigator
   grafana:

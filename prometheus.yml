@@ -11,29 +11,19 @@ rule_files:
   - "alert.rules_service-groups"
 
 scrape_configs:
-  - job_name: cadvisor
-    scrape_interval: 5s
+  - job_name: 'prometheus'
     static_configs:
     - targets:
-      - cadvisor:8080
-
-  - job_name: 'prometheus'
-    dns_sd_configs:
-    - names:
-      - 'tasks.prometheus'
-      type: 'A'
-      port: 9090
+      - prometheus:9090
 
   - job_name: 'kafka_exporter'
-    dns_sd_configs:
-    - names:
-      - 'tasks.kafka_exporter'
-      type: 'A'
-      port: 9308
-
-  - job_name: 'kafka'
     static_configs:
     - targets:
-      - broker1:7072
-      - broker1:7072
-      - broker1:7072
+      - kafka_exporter:9308
+
+  - job_name: 'kafka_jmx_exporter'
+    static_configs:
+    - targets:
+      - instigator_broker_1:7072
+      - instigator_broker_2:7072
+      - instigator_broker_3:7072
