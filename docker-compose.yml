@@ -49,12 +49,6 @@ services:
     networks:
       - Instigator
 
-secrets:
-  prometheus.yml:
-    file: config/prometheus.yml
-  alertmanager.yml:
-    file: config/alertmanager.yml
-
 networks:
   default:
     external:
