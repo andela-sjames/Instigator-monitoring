@@ -50,6 +50,5 @@ services:
       - Instigator
 
 networks:
-  default:
-    external:
-      name: instigator
+  Instigator:
+      external: true
