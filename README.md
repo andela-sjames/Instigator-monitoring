@@ -44,3 +44,11 @@ networks:
 ```
 
 This network is created when you start the Instigator project. Plese note that this setup will not run if the Instigator project is not started first.
+
+## Network Inspection
+
+To see docker creates allows services to talk to each other within a network you can inspect docker network settings via the command
+
+`docker network inspect Instigator`
+
+This will show you the IP addresses and the services name Docker assigns to every services running within the network once it is running. 
