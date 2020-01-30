@@ -31,3 +31,16 @@ Prometheus also keeps track of the services it's pull metrics from and one of su
 The kafka brokers from the Instigator repository have the prometheus java agent and jmx exporter installed in them. Reference the kafka Dockerfile.
 
 So what's the difference between the Kafka Exporter and the Kafka JMX Exporter? The former is cluster specific while the later is node specific metric!
+
+## Network
+
+The Docker-Compose file uses an already exixting network when running locally called `Instigator`
+
+```yaml
+
+networks:
+  Instigator:
+      external: true
+```
+
+This network is created when you start the Instigator project. Plese note that this setup will not run if the Instigator project is not started first.
