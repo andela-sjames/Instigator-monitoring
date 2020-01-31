@@ -1,6 +1,6 @@
 # Instigator-monitoring
 
-Setup Monitoring for Instigator (Prometheus, Graphana and Kafka Exporter and JMX Kakfa Exporter)
+Setup Monitoring for Instigator (Prometheus, Graphana, Kafka Exporter and JMX Kakfa Exporter)
 
 You need to reference the [Instigator](https://github.com/andela-sjames/Instigator-monitoring) repo before running the docker-compose file on the repo.
 
@@ -28,7 +28,7 @@ Prometheus also keeps track of the services it's pull metrics from and one of su
 
 ```
 
-The kafka brokers from the Instigator repository have the prometheus java agent and jmx exporter installed in them. Reference the kafka Dockerfile.
+The kafka brokers from the Instigator repository have the prometheus java agent and jmx exporter installed in them. Pleae reference the kafka Dockerfile.
 
 So what's the difference between the Kafka Exporter and the Kafka JMX Exporter? The former is cluster specific while the later is node specific metric!
 
@@ -52,3 +52,5 @@ To see docker creates allows services to talk to each other within a network you
 `docker network inspect Instigator`
 
 This will show you the IP addresses and the services name Docker assigns to every services running within the network once it is running. 
+
+## Running Docker
