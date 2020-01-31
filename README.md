@@ -34,7 +34,7 @@ So what's the difference between the `Kafka Exporter` and the `Kafka JMX Exporte
 
 ## Network
 
-The Docker-Compose file uses an already exixting network when running locally called `Instigator`
+The Docker-Compose file uses an already existing network when running locally called `Instigator`
 
 ```yaml
 
@@ -51,7 +51,7 @@ To see how docker allows services to talk to each other within a network, you ca
 
 `docker network inspect Instigator`
 
-This will show you the IP addresses and the services name Docker assigns to every running containers within the network once it is running.
+This will show you the IP address and the service name Docker assigns to every running container within the network once it is running.
 
 ## Running Docker
 
