@@ -14,11 +14,13 @@ It has three main services:
 
 ## Work Flow
 
-Kafka exporter gets and pulls metrics from the kafka cluster, while prometheus stores these metrics in a time series database for Grafana to pull and display using really cool dashboads :)
+Kafka exporter gets and pulls metrics from the kafka cluster, while prometheus stores these metrics in a time series database for Grafana to pull and display on cool dashboads :)
 
 Prometheus also keeps track of the services it's pull metrics from and one of such metric is the metric it pulls from each brokers within the kafka cluster called Kafka JMX metrics
 
 ```yaml
+# prometheus.yml file
+
 - job_name: 'kafka_jmx_exporter'
     static_configs:
     - targets:
@@ -30,7 +32,7 @@ Prometheus also keeps track of the services it's pull metrics from and one of su
 
 The kafka brokers from the Instigator repository have the `prometheus java agent` and `jmx exporter` installed on them. Please reference the kafka Dockerfile.
 
-So what's the difference between the `Kafka Exporter` and the `Kafka JMX Exporter`? The former is a cluster specific while the later is a node specific metric!
+So what's the difference between the `Kafka Exporter` and the `Kafka JMX Exporter`? The former is a cluster specific metric while the later is a node specific metric!
 
 ## Network
 
@@ -43,21 +45,42 @@ networks:
       external: true
 ```
 
-This network is created when you start the Instigator project. **Plese note** that this setup will not run if the Instigator project is not started first.
+This network is created when you start the Instigator project. **Please note** that this setup will not run if the Instigator project is not started first.
 
 ## Network Inspection
 
-To see how docker allows services to talk to each other within a network, you can inspect docker network settings via the command
+To see how docker allows services to talk to each other within a network, you should inspect docker network settings via the command
 
-`docker network inspect Instigator`
+```shell
+$docker network inspect Instigator
+```
 
-This will show you the IP address and the service name Docker assigns to every running container within the network once it is running.
+This will show you the IP addresses and the service names Docker assigns to every running container within the network once it is running.
 
 ## Running Docker
 
 ```shell
 $docker-compose up
-
 ```
 
 This will build and start all containers if called the first time, every other time the command is called will run the stack without builing.
+
+## Accessing the Services
+
+### Kafka Exporter
+
+```shell
+localhost:9308
+```
+
+### Prometheus
+
+```shell
+localhost:9090
+```
+
+### Grafana
+
+```shell
+localhost:9090
+```
