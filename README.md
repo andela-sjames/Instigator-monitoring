@@ -82,5 +82,5 @@ localhost:9090
 ### Grafana
 
 ```shell
-localhost:9090
+localhost:3000
 ```
