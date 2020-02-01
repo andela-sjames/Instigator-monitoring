@@ -8,9 +8,11 @@ This Repo uses docker to set up monitoring for the [Instigator](https://github.c
 
 It has three main services:
 
-1. Kafka Exporter
-2. Prometheus
-3. Grafana
+1. [Kafka Exporter](https://github.com/danielqsj/kafka_exporter)
+2. [Prometheus](https://prometheus.io/docs/introduction/overview/)
+3. [Grafana](https://grafana.com/)
+
+[Grafana support for prometheus](https://prometheus.io/docs/visualization/grafana/)
 
 ## Work Flow
 
