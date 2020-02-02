@@ -101,3 +101,8 @@ Learn about these tools:
 - <https://prometheus.io/docs/prometheus/latest/getting_started/>
 - <https://www.robustperception.io/monitoring-kafka-with-prometheus>
 - <https://grafana.com/docs/grafana/latest/tutorials/>
+
+
+## Blog Post 
+
+<https://medium.com/@jamesvaresamuel/producer-kafka-consumer-relationship-using-docker-6bbd5e116f5>
