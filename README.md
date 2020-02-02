@@ -84,6 +84,11 @@ localhost:9090
 ### Grafana
 
 ```shell
+user: admin
+password: pass
+```
+
+```shell
 localhost:3000
 ```
 
