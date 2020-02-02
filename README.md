@@ -6,7 +6,7 @@ Setup Monitoring for Instigator (Prometheus, Graphana, Kafka Exporter and JMX Ka
 
 You need to reference the [Instigator](https://github.com/andela-sjames/Instigator) repo before running the docker-compose file on the repo.
 
-This Repo uses docker to set up monitoring for the [Instigator](https://github.com/andela-sjames/Instigator-monitoring) Project Repository.
+This Repo uses docker to set up monitoring for the [Instigator](https://github.com/andela-sjames/Instigator) Project Repository.
 
 It has three main services:
 
