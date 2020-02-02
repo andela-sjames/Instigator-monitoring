@@ -2,7 +2,7 @@
 
 Setup Monitoring for Instigator (Prometheus, Graphana, Kafka Exporter and JMX Kakfa Exporter)
 
-**Please Note** that this setup will not run if the Instigator project is not started first.
+**Please Note** that this setup will not run if the [Instigator](https://github.com/andela-sjames/Instigator-monitoring) project is not started first.
 
 You need to reference the [Instigator](https://github.com/andela-sjames/Instigator-monitoring) repo before running the docker-compose file on the repo.
 
