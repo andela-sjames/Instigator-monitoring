@@ -6,7 +6,7 @@ volumes:
 
 services:
   kafka_exporter:
-    image: danielqsj/kafka-exporter
+    image: danielqsj/kafka-exporter:v1.2.0
     networks:
       - Instigator
     ports:
